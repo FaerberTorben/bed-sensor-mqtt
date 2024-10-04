@@ -9,6 +9,18 @@ void setup() {
     Serial.begin(74880);
     Serial.println();
 
+    connectWiFi();
+}
+
+
+void loop() {
+    float reading;
+    float raw;
+}
+
+
+void connectWiFi() {
+
     //Initiate the WiFi Connection
     WiFi.mode(WIFI_STA);
     WiFi.begin(SSID, PASSWORD);
@@ -21,9 +33,7 @@ void setup() {
     }
 
     Serial.println();
-}
 
-void void loop() {
-    float reading;
-    float raw;
+    Serial.print("Connected, IP address: ");
+    Serial.println(WiFi.localIP());
 }
